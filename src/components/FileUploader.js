@@ -34,7 +34,7 @@ const FileUploader = ({ setIsLoading, setAnalysisResult, setError }) => {
       setAnalysisResult(null);
 
       // Enviar archivo al backend
-      const response = await axios.post('https://excel-analyzer-api.onrender.com', formData, {
+      const response = await axios.post('https://excel-analyzer-api.onrender.com/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -127,7 +127,7 @@ const FileUploader = ({ setIsLoading, setAnalysisResult, setError }) => {
               setError(null);
               setAnalysisResult(null);
               
-              axios.post('http://localhost:8000/analyze', formData, {
+              axios.post('https://excel-analyzer-api.onrender.com/analyze', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },
